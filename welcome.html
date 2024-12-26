@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmeraldStay - Your Perfect Hotel Booking</title>
+    <link rel="stylesheet" href="welcome.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EmeraldStay</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#search">Find Your Stay</a></li>
+                <li><a href="#hotel-types">Hotel Types</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="kashmir.jpg" alt="Paris" loading="lazy">
+                        <div class="destination-overlay">Paris</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Delhi.jpg" alt="New York" loading="lazy">
+                        <div class="destination-overlay">New York</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/1920x1080.png?text=Tokyo" alt="Tokyo" loading="lazy">
+                        <div class="destination-overlay">Tokyo</div>
+                    </div>
+                </div>
+                <button class="carousel-control prev" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-control next" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-indicators"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Discover Your Dream Destination</h1>
+                <p>Explore the world with EmeraldStay</p>
+                <a href="#search" class="cta-button">Find Your Perfect Stay</a>
+            </div>
+            <div class="quote-box">
+                <p class="quote">"Travel is the only thing you buy that makes you richer"</p>
+            </div>
+        </section>
+
+        <section id="search">
+            <h2>Find Your Perfect Stay</h2>
+            <form id="search-form">
+                <input type="text" placeholder="Location" required>
+                <input type="date" placeholder="Check-in" required>
+                <input type="date" placeholder="Check-out" required>
+                <input type="number" placeholder="Guests" min="1" required>
+                <select name="hotel-type" required>
+                    <option value="">Select Hotel Type</option>
+                    <option value="luxury">Luxury</option>
+                    <option value="budget">Budget</option>
+                    <option value="resort">Resort</option>
+                    <option value="boutique">Boutique</option>
+                </select>
+                <button type="submit">Search Hotels</button>
+            </form>
+        </section>
+
+        <section id="hotel-types">
+            <h2>Explore Hotel Types</h2>
+            <div class="hotel-type-grid">
+                <div class="hotel-type-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Luxury+Hotels" alt="Luxury Hotels">
+                    <h3>Luxury Hotels</h3>
+                    <p>Experience ultimate comfort and elegance</p>
+                </div>
+                <div class="hotel-type-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Beach+Resorts" alt="Beach Resorts">
+                    <h3>Beach Resorts</h3>
+                    <p>Relax and unwind by the sea</p>
+                </div>
+                <div class="hotel-type-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=City+Hotels" alt="City Hotels">
+                    <h3>City Hotels</h3>
+                    <p>Stay in the heart of vibrant urban centers</p>
+                </div>
+                <div class="hotel-type-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Boutique+Hotels" alt="Boutique Hotels">
+                    <h3>Boutique Hotels</h3>
+                    <p>Unique and stylish accommodations</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="deals">
+            <h2>Exclusive Deals</h2>
+            <div class="deals-grid">
+                <div class="deal-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Luxury+Resort" alt="Luxury Resort">
+                    <h3>Luxury Resort Getaway</h3>
+                    <p>Up to 30% off on 5-night stays</p>
+                    <button>Book Now</button>
+                </div>
+                <div class="deal-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=City+Break" alt="City Break">
+                    <h3>City Break Package</h3>
+                    <p>Free breakfast and late checkout</p>
+                    <button>Book Now</button>
+                </div>
+                <div class="deal-card">
+                    <img src="https://via.placeholder.com/300x200.png?text=Beach+Vacation" alt="Beach Vacation">
+                    <h3>Beach Vacation Special</h3>
+                    <p>20% off on all-inclusive packages</p>
+                    <button>Book Now</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About EmeraldStay</h3>
+                <p>We're dedicated to providing the best hotel booking experience.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#search">Find Your Stay</a></li>
+                    <li><a href="#hotel-types">Hotel Types</a></li>
+                    <li><a href="#deals">Deals</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@emeraldstay.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 EmeraldStay. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="welcome.js"></script>
+</body>
+</html>
+
