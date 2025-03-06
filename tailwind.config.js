@@ -89,6 +89,9 @@ const shadcnConfig = {
           "green-india": "#138808",
           "navy-india": "#000080",
           "chakra-blue": "#000080",
+          // New theme colors
+          ivory: "#FFFFF0",
+          darkGreen: "#013220",
         },
         fontFamily: {
           sans: ["Poppins", "sans-serif"],
