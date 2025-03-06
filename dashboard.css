@@ -1,0 +1,71 @@
+/* Custom styles beyond Tailwind */
+
+/* Scrollbar customization */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  /* Indian-inspired decorative elements */
+  .indian-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5C40.493 5 49 13.507 49 24C49 34.493 40.493 43 30 43C19.507 43 11 34.493 11 24C11 13.507 19.507 5 30 5ZM30 0C17.85 0 8 9.85 8 22C8 34.15 17.85 44 30 44C42.15 44 52 34.15 52 22C52 9.85 42.15 0 30 0Z' fill='%23D97706' fill-opacity='0.1'/%3E%3C/svg%3E");
+  }
+  
+  /* Custom animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  /* Custom colors for the new theme */
+  .bg-ivory {
+    background-color: #fffff0;
+  }
+  
+  .bg-darkGreen {
+    background-color: #013220;
+  }
+  
+  .text-ivory {
+    color: #fffff0;
+  }
+  
+  .text-darkGreen {
+    color: #013220;
+  }
+  
+  .border-darkGreen {
+    border-color: #013220;
+  }
+  
+  .border-ivory {
+    border-color: #fffff0;
+  }
+  
+  /* Decorative elements */
+  .rangoli-border {
+    border-image: linear-gradient(45deg, #fffff0, #013220) 1;
+  }
+  
+  /* Custom focus styles */
+  input:focus,
+  button:focus {
+    outline: 2px solid #013220;
+    outline-offset: 2px;
+  }
+  
+  
