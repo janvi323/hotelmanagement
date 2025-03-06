@@ -1,7 +1,10 @@
 [
   {
-    "username": "janviranout",
+    "id": "1741023486972",
+    "firstName": "janvi",
+    "lastName": "athrav",
     "email": "janviranout@gmail.com",
-    "password": "janvi"
+    "password": "janvi123",
+    "createdAt": "2025-03-03T17:38:06.972Z"
   }
 ]
