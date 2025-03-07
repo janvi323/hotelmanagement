@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('booking-form');
+    const form1 = document.getElementById('booking-form');
     const startDateInput = document.getElementById('start-date');
     const endDateInput = document.getElementById('end-date');
     const slides = document.querySelectorAll('.slide');
@@ -41,15 +41,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    form.addEventListener('submit', function(e) {
+    // Corrected event listener (merged both into one)
+    form1.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        const formData = new FormData(form);
+        const formData = new FormData(form1);
         const bookingData = Object.fromEntries(formData.entries());
-        
-        // Here you would typically send this data to your backend
+
         console.log('Booking Data:', bookingData);
         alert('Form submitted! Check console for values.');
+
+        // Send data to backend
+        const userId = "1741023486972"; // Actual logged-in user ID
+
+        fetch("/api/saveBooking", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ userId, bookingDetails: bookingData })
+        })
+        .then(response => response.json())
+        .then(data => console.log("Booking Saved:", data))
+        .catch(error => console.error("Error:", error));
     });
 
     // Add animation delay to form groups
@@ -58,4 +70,3 @@ document.addEventListener('DOMContentLoaded', function() {
         group.style.animationDelay = `${0.1 * (index + 1)}s`;
     });
 });
-
