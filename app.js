@@ -118,5 +118,5 @@ app.post("/api/register", (req, res) => {
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
-  console.log(`Visit http://loalhost:${PORT} to access the application`)
+  console.log(`Visit http://localhost:${PORT} to access the application`)
 })
