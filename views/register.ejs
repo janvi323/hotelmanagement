@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EliteEscapes</title>
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo-container">
+                    <h1 class="logo">EliteEscapes</h1>
+                    <span class="tagline">Luxury Stays</span>
+                </a>
+                <div class="header-right">
+                    <div class="currency-selector">
+                        <span>INR</span>
+                        <span class="currency-symbol">₹</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="register-section">
+        <div class="container">
+            <div class="register-container">
+                <div class="register-image-container">
+                    <img src="/images/luxury-hotel.jpg" alt="Luxury Hotel" class="register-image">
+                    <div class="image-overlay">
+                        <h2>Join EliteEscapes</h2>
+                        <p>Discover luxury stays across India</p>
+                    </div>
+                </div>
+                <div class="register-form-container">
+                    <h2 class="form-title">Create an Account</h2>
+                    <p class="form-subtitle">Join our community of luxury travelers</p>
+                    
+                    <% if (locals.successMessage) { %>
+                    <div class="success-message">
+                        <i class="fas fa-check-circle"></i> <%= successMessage %>
+                    </div>
+                    <% } %>
+                    
+                    <% if (locals.errorMessage) { %>
+                    <div class="error-banner">
+                        <i class="fas fa-exclamation-circle"></i> <%= errorMessage %>
+                    </div>
+                    <% } %>
+                    
+                    <form id="register-form" class="register-form" action="/register" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="first-name">First Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="first-name" name="firstName" value="<%= locals.formData ? formData.firstName : '' %>" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="last-name" name="lastName" value="<%= locals.formData ? formData.lastName : '' %>" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" value="<%= locals.formData ? formData.email : '' %>" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" required>
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-requirements">
+                                <div class="requirement" data-requirement="length">
+                                    <i class="fas fa-circle"></i> At least 8 characters
+                                </div>
+                                <div class="requirement" data-requirement="uppercase">
+                                    <i class="fas fa-circle"></i> At least one uppercase letter
+                                </div>
+                                <div class="requirement" data-requirement="number">
+                                    <i class="fas fa-circle"></i> At least one number
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirm-password" name="confirmPassword" required>
+                                <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group terms">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                <span>I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="register-btn">
+                            <span class="btn-text">Create Account</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                    
+                    <div class="login-link">
+                        <p>Already have an account? <a href="/login">Sign in</a></p>
+                    </div>
+                    
+                    <div class="social-login">
+                        <p>Or register with</p>
+                        <div class="social-buttons">
+                            <button class="social-btn google">
+                                <i class="fab fa-google"></i>
+                                <span>Google</span>
+                            </button>
+                            <button class="social-btn facebook">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="/public/js/register.js"></script>
+</body>
+</html>

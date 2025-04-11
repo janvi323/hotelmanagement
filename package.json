@@ -1,7 +1,7 @@
 {
   "name": "eliteescapes",
   "version": "1.0.0",
-  "description": "",
+  "description": "��#\u0000 \u0000h\u0000o\u0000t\u0000e\u0000l\u0000m\u0000a\u0000n\u0000a\u0000g\u0000e\u0000m\u0000e\u0000n\u0000t\u0000\r\u0000 \u0000",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
@@ -13,8 +13,23 @@
     "compression": "^1.8.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
+    "ejs": "^3.1.10",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "morgan": "^1.10.0"
-  }
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janvi323/hotelmanagement.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/janvi323/hotelmanagement/issues"
+  },
+  "homepage": "https://github.com/janvi323/hotelmanagement#readme"
 }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Elite Escapes Hotel Management System</title>
+  <link rel="stylesheet" href="/stylesheets/login.css">
+
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <!-- Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+        </svg>
+      </div>
+      <h1>Elite Escapes</h1>
+      <p class="tagline">The Perfect Option for Booking Stays</p>
+    </div>
+
+    <!-- Login Card -->
+    <div class="card">
+      <div class="card-body">
+        <h2>Login</h2>
+
+        <div id="error-message" class="error-message"></div>
+
+        <form id="login-form" method="POST" action="/login">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="••••••••">
+          </div>
+
+          <div class="form-options">
+            <div class="remember-me">
+              <input id="remember-me" name="remember-me" type="checkbox">
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn-primary">Sign in</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card-footer">
+        <p>
+          Don't have an account?
+          <a href="/register" class="register-link">Register now</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="features">
+      <div class="feature">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Prime Locations</span>
+      </div>
+      <div class="feature">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>24/7 Service</span>
+      </div>
+      <div class="feature">
+        <svg xmlns="http://www.w3.org/2000/svg" class="feature-icon" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+        <span>Luxury Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="/public/js/login.js"></script>
+</body>
+</html>
