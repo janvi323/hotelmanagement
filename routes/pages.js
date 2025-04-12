@@ -1,76 +1,109 @@
 const express = require("express");
 const router = express.Router();
+const { readUsers, writeUsers } = require("../utils/fileHandler");
 
-// Route to the home page, redirect to the dashboard if logged in
+// Home route
 router.get("/", (req, res) => {
-  if (req.session.user) {
-    return res.redirect("/dashboard"); // Redirect to dashboard if logged in
-  }
-  res.redirect("/login"); // Otherwise, redirect to login page
+  res.redirect("/dashboard"); // Always show dashboard first
 });
 
-// Route to render the login page
+// Render login page
 router.get("/login", (req, res) => {
   const errorMessage = req.session.errorMessage || null;
-  req.session.errorMessage = null;  // Clear the error message after showing it
+  req.session.errorMessage = null;
   res.render("login", { errorMessage });
 });
 
-// Route to handle login form submission
+// Handle login form
 router.post("/login", (req, res) => {
   const { email, password } = req.body;
-  const user = { email: "user@example.com", password: "password123" }; // Replace with actual DB query
+  const users = readUsers();
+  const user = users.find(u => u.email === email);
 
-  if (email === user.email && password === user.password) {
-    req.session.user = user; // Store user in session
-    return res.redirect("/dashboard"); // Redirect to dashboard after successful login
+  console.log("🔐 Login attempt:", email);
+
+  if (!user) {
+    console.log("❌ Email not found");
+    req.session.errorMessage = "Invalid email!";
+    return res.redirect("/login");
   }
 
-  req.session.errorMessage = "Invalid credentials!";
-  return res.redirect("/login"); // Redirect back to login page if credentials are incorrect
+  // ✅ Simple password comparison (no bcrypt)
+  if (password !== user.password) {
+    console.log("❌ Password incorrect");
+    req.session.errorMessage = "Invalid password!";
+    return res.redirect("/login");
+  }
+
+  req.session.user = user;
+  console.log("✅ Login success:", user.email);
+  return res.redirect("/dashboard");
 });
 
-// Route to render the register page
+// Render register page
 router.get("/register", (req, res) => {
   const errorMessage = req.session.errorMessage || null;
   req.session.errorMessage = null;
   res.render("register", { errorMessage });
 });
 
-// Route to handle registration form submission
+// Handle register form
 router.post("/register", (req, res) => {
   const { firstName, lastName, email, password, confirmPassword, terms } = req.body;
 
-  if (password !== confirmPassword) {
-    req.session.errorMessage = "Passwords do not match!";
-    return res.redirect("/register"); // Redirect back to the register page if passwords don't match
-  }
-
-  if (!terms) {
-    req.session.errorMessage = "You must agree to the terms and conditions!";
+  if (!firstName || !lastName || !email || !password || !confirmPassword) {
+    req.session.errorMessage = "All fields are required!";
     return res.redirect("/register");
   }
 
-  // Registration logic (e.g., saving the user to the database)
-  req.session.successMessage = "Account created successfully! Please log in.";
-  return res.redirect("/login"); // Redirect to the login page after successful registration
-});
-
-// Route to render the dashboard page
-router.get("/dashboard", (req, res) => {
-  if (!req.session.user) {
-    return res.redirect("/login"); // If the user is not logged in, redirect to login
+  if (password !== confirmPassword) {
+    req.session.errorMessage = "Passwords do not match!";
+    return res.redirect("/register");
   }
-  res.render("dashboard"); // Render dashboard if user is logged in
+
+  if (!terms) {
+    req.session.errorMessage = "You must agree to the terms!";
+    return res.redirect("/register");
+  }
+
+  const users = readUsers();
+  const userExists = users.find((u) => u.email === email);
+  if (userExists) {
+    req.session.errorMessage = "Email already registered!";
+    return res.redirect("/register");
+  }
+
+  const newUser = {
+    id: Date.now().toString(),
+    firstName,
+    lastName,
+    email,
+    password, // 👈 plain-text password
+    createdAt: new Date().toISOString()
+  };
+
+  users.push(newUser);
+  writeUsers(users);
+
+  req.session.successMessage = "Account created successfully!";
+  return res.redirect("/login");
 });
 
-// Route to log out
+// Dashboard route
+router.get("/dashboard", (req, res) => {
+  console.log("📂 Public dashboard accessed.");
+  res.render("dashboard",{ user: req.session.user}); // No session check, public access
+});
+
+
+
+// Logout
 router.get("/logout", (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       return res.redirect("/dashboard");
     }
-    res.redirect("/login"); // Redirect to login page after logout
+    res.redirect("/login");
   });
 });
 

@@ -6,22 +6,22 @@ const cookieParser = require("cookie-parser");
 const path = require("path");
 
 module.exports = function (app) {
-  //  Security
+  // Security Headers
   app.use(helmet());
 
-  //  Cross-Origin Resource Sharing
+  // CORS - Allow requests from specific domains
   app.use(cors());
 
-  //  Cookie Parsing
+  // Cookie Parser - Parsing cookies
   app.use(cookieParser());
 
-  //  Body Parsing
+  // Body Parsing - Parse incoming JSON and url-encoded data
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
 
-  //  Logging
+  // Logging - HTTP request logging using morgan
   app.use(morgan("dev"));
 
-  // Static Assets from public/ (css, js, images, etc.)
+  // Static Assets - Serve static files (css, js, images, etc.)
   app.use(express.static(path.join(__dirname, "..", "public")));
 };

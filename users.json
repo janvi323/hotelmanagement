@@ -1,35 +1,11 @@
 [
   {
-    "id": "1741023486972",
-    "firstName": "janvi",
-    "lastName": "ranout",
+    "id": "1744434168710",
+    "firstName": "Janvi",
+    "lastName": "Ranout",
     "email": "janviranout@gmail.com",
-    "password": "janvi123",
-    "createdAt": "2025-03-03T17:38:06.972Z"
-  },
-  {
-    "id": "1741270413553",
-    "firstName": "janvi",
-    "lastName": "ranout",
-    "email": "janviranout7@gmail.com",
-    "password": "janvi123",
-    "createdAt": "2025-03-06T14:13:33.553Z"
-  },
-  {
-    "id": "1741280025518",
-    "firstName": "janvi",
-    "lastName": "athrav",
-    "email": "janviranout888@gmail.com",
-    "password": "yusuf4321",
-    "createdAt": "2025-03-06T16:53:45.519Z"
-  },
-  {
-    "id": "1741317522772",
-    "firstName": "janvi",
-    "lastName": "ranout",
-    "email": "janviranout454@gmail.com",
     "password": "janvi@323",
-    "createdAt": "2025-03-07T03:18:42.772Z",
-    "bookings": []
+    "createdAt": "2025-04-12T05:02:48.710Z"
   }
+
 ]

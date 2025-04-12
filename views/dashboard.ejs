@@ -6,8 +6,32 @@
     <title>EliteEscapes - Luxury Stays</title>
     <link rel="stylesheet" href="/stylesheets/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Flatpickr CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 <body>
+<!-- Flatpickr CDN -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  flatpickr("#checkin", {
+    dateFormat: "Y-m-d"
+  });
+
+  flatpickr("#checkout", {
+    dateFormat: "Y-m-d"
+  });
+</script>
+
+
+    
+    <% if (user) { %>
+        <div class="login-notice">
+          Logged in as <%= user.firstName %> <%= user.lastName %>
+        </div>
+      <% } %>
+      
     <!-- Header Section -->
     <header class="header">
         <div class="container">
@@ -17,15 +41,21 @@
                     <span class="tagline">Luxury Stays</span>
                 </div>
                 <div class="header-right">
-                    <div class="currency-selector">
-                        <span>INR</span>
-                        <span class="currency-symbol">₹</span>
-                    </div>
-                    <img src="/images/user-icon.png" alt="User" class="user-icon">
-                    <div class="auth-buttons">
-                        <a href="/register" class="register-btn">Register</a>
-                        <a href="/login" class="login-btn">Sign in</a>
-                    </div>
+                    
+                    <img src="img1.jpg" alt="User" class="user-icon">
+                    <% if (user) { %>
+                        <!-- Logged in: show profile icon with first letter -->
+                        <div class="profile-initial" title="<%= user.firstName + ' ' + user.lastName %>">
+                          <%= user.firstName.charAt(0).toUpperCase() %>
+                        </div>
+                      <% } else { %>
+                        <!-- Not logged in: show login/register -->
+                        <div class="auth-buttons">
+                          <a href="/register" class="register-btn">Register</a>
+                          <a href="/login" class="login-btn">Log in</a>
+                        </div>
+                      <% } %>
+                      
                 </div>
             </div>
         </div>
@@ -76,33 +106,53 @@
     </nav>
 
     <!-- Search Section -->
-    <section class="search-section">
-        <div class="container">
-            <div class="search-container">
-                <div class="search-box">
-                    <div class="search-input-group">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <input type="text" placeholder="Where are you going?" class="search-input">
-                    </div>
-                    <div class="search-input-group">
-                        <i class="far fa-calendar-alt"></i>
-                        <input type="text" placeholder="Check-in — Check-out" class="search-input date-input">
-                    </div>
-                    <div class="search-input-group">
-                        <i class="fas fa-user-friends"></i>
-                        <input type="text" placeholder="2 adults · 0 children · 1 room" class="search-input guest-input">
-                    </div>
-                    <button class="search-btn">Search</button>
-                </div>
-                <div class="search-options">
-                    <label class="search-checkbox">
-                        <input type="checkbox">
-                        <span>I'm looking for flights</span>
-                    </label>
-                </div>
+<section class="search-section">
+    <div class="container">
+      <form action="/book" method="POST">
+        <div class="search-container">
+          <div class="search-box">
+            <!-- Destination -->
+            <div class="search-input-group">
+              <i class="fas fa-map-marker-alt"></i>
+              <input type="text" name="destination" placeholder="Where are you going?" class="search-input" required>
             </div>
+  
+            <!-- Date Range -->
+          <!-- Check-in -->
+<div class="search-input-group">
+    <i class="far fa-calendar-alt"></i>
+    <input type="text" name="checkin" id="checkin" class="search-input" placeholder="Check-in date" required>
+  </div>
+  
+  <!-- Check-out -->
+  <div class="search-input-group">
+    <i class="far fa-calendar-alt"></i>
+    <input type="text" name="checkout" id="checkout" class="search-input" placeholder="Check-out date" required>
+  </div>
+  
+  
+            <!-- Guests -->
+            <div class="search-input-group">
+              <i class="fas fa-user-friends"></i>
+              <input type="text" name="guests" placeholder="2 adults · 0 children · 1 room" class="search-input guest-input" required>
+            </div>
+  
+            <!-- Submit -->
+            <button class="search-btn" type="submit">Search</button>
+          </div>
+  
+          <!-- Flights Checkbox -->
+          <div class="search-options">
+            <label class="search-checkbox">
+              <input type="checkbox" name="flights">
+              <span>I'm looking for flights</span>
+            </label>
+          </div>
         </div>
-    </section>
+      </form>
+    </div>
+  </section>
+  
 
     <!-- Special Offers Section -->
     <section class="offers-section">
@@ -178,7 +228,7 @@
                 
                 <div class="destination-card">
                     <img src="/images/varanasi.jpg" alt="Varanasi" class="destination-image">
-                    <div class="destination-overlay">
+               <sectio     <div class="destination-overlay">
                         <h3 class="destination-name">Varanasi</h3>
                     </div>
                 </div>

@@ -27,10 +27,13 @@ app.use(express.urlencoded({ extended: true }));
 
 // Serve static files (CSS, JS, images, etc.)
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use((req, res, next) => {
+  res.locals.user = req.session.user || null; // 👈 Global access in EJS
+  next();
+});
 // Routes
 app.use("/", require("./routes/pages"));
-app.use("/", require("./routes/auth"));
+app.use("/", require("./routes/bookingHandler"));
 
 // Global error handling middleware
 app.use((err, req, res, next) => {

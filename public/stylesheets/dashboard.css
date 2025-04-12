@@ -616,3 +616,27 @@ button,
 .animate-fadeInUp {
   animation: fadeInUp 0.5s ease forwards;
 }
+.login-notice {
+  background-color: #e6f7ff;
+  color: #007bff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #b3d7ff;
+  font-weight: 500;
+}
+
+.profile-initial {
+  background-color: #007bff;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 15px;
+}
