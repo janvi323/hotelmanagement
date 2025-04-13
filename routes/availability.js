@@ -9,19 +9,19 @@ const data = {
         name: "The Oberoi Rajvilas",
         price: "₹25,000 per night",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80"
+        image: "/images/oberoi.jpg"
       },
       {
         name: "Rambagh Palace",
         price: "₹32,000 per night",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+        image: "/images/rambagh.jpg"
       },
       {
         name: "Taj Jai Mahal Palace",
         price: "₹18,500 per night",
         rating: 4.5,
-        image: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=800&q=80"
+        image: "/images/tajmahal.jpg"
       }
     ],
     flights: [
@@ -33,20 +33,20 @@ const data = {
       {
         name: "Taj Fort Aguada Resort",
         price: "₹18,000 per night",
-        rating: 5,
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+        rating: 4.7,
+        image: "/images/tajfort.jpg"
       },
       {
         name: "W Goa",
         price: "₹22,500 per night",
         rating: 5,
-        image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+        image: "/images/wgoa.webp"
       },
       {
         name: "Alila Diwa Goa",
         price: "₹15,800 per night",
         rating: 4.5,
-        image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80"
+        image: "/images/alia.jpg"
       }
     ],
     flights: [
@@ -59,19 +59,19 @@ const data = {
         name: "Ri Kynjai Resort",
         price: "₹12,500 per night",
         rating: 4.5,
-        image: "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=800&q=80"
+        image: "/images/rikynjai.jpg"
       },
       {
         name: "Polo Towers",
         price: "₹8,800 per night",
         rating: 4,
-        image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=800&q=80"
+        image: "/images/polo.avif"
       },
       {
         name: "Royal Heritage Tripura Castle",
         price: "₹9,500 per night",
         rating: 4,
-        image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+        image: "/images/tripura.jpg"
       }
     ],
     flights: [
