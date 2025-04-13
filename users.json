@@ -6,6 +6,13 @@
     "email": "janviranout@gmail.com",
     "password": "janvi@323",
     "createdAt": "2025-04-12T05:02:48.710Z"
+  },
+  {
+    "id": "1744525623100",
+    "firstName": "Mukesh ",
+    "lastName": "Ranout",
+    "email": "mukeshranout@gmail.com",
+    "password": "Mukesh@123",
+    "createdAt": "2025-04-13T06:27:03.101Z"
   }
-
 ]
