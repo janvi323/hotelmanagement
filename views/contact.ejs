@@ -7,14 +7,12 @@
     <title>Contact Us - Our Group of Hotels</title>
     
     <style>
-        /* General Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Body and Font */
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -22,9 +20,8 @@
             line-height: 1.6;
         }
 
-        /* Header */
         header {
-            background-color: #006400; /* Dark Green */
+            background-color: #006400;
             color: #fff;
             padding: 15px 0;
         }
@@ -56,7 +53,6 @@
             font-size: 16px;
         }
 
-        /* Contact Section */
         .contact-section {
             padding: 60px 0;
             background-color: #fff;
@@ -71,7 +67,7 @@
             font-size: 40px;
             text-align: center;
             margin-bottom: 20px;
-            color: #006400; /* Dark Green */
+            color: #006400;
         }
 
         .contact-section p {
@@ -99,13 +95,13 @@
             font-size: 16px;
         }
 
-        .form-left input, .form-left textarea, .form-right input, .form-right textarea:focus {
-            border-color: #006400; /* Dark Green */
+        .form-left input:focus, .form-left textarea:focus, .form-right input:focus, .form-right textarea:focus {
+            border-color: #006400;
             outline: none;
         }
 
         .form-left button, .form-right button {
-            background-color: #006400; /* Dark Green */
+            background-color: #006400;
             color: #fff;
             padding: 15px;
             border: none;
@@ -116,10 +112,9 @@
         }
 
         .form-left button:hover, .form-right button:hover {
-            background-color: #004d00; /* Slightly darker green */
+            background-color: #004d00;
         }
 
-        /* Google Map Section */
         .map-container {
             margin-top: 50px;
             width: 100%;
@@ -128,9 +123,8 @@
             overflow: hidden;
         }
 
-        /* Footer */
         footer {
-            background-color: #006400; /* Dark Green */
+            background-color: #006400;
             color: #fff;
             padding: 20px 0;
             text-align: center;
@@ -158,16 +152,15 @@
             <div class="logo">Group of Hotels</div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Contact Section -->
     <section class="contact-section">
         <div class="container">
             <h1>Contact Us</h1>
@@ -175,11 +168,11 @@
             <div class="contact-form">
                 <div class="form-left">
                     <h2>Send Us a Message</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Full Name" required>
-                        <input type="email" placeholder="Email Address" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                        <textarea rows="5" placeholder="Your Message" required></textarea>
+                    <form action="/send-message" method="POST">
+                        <input type="text" name="fullname" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                         <button type="submit">Submit</button>
                     </form>
                 </div>
@@ -196,7 +189,6 @@
                 </div>
             </div>
 
-            <!-- Google Map Embed -->
             <div class="map-container">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7345.569832874535!2d77.20829824350261!3d28.644800267671974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1d745658e2db%3A0x44762ba9f8067b5f!2sNew%20Delhi%2C%20Delhi%2C%20India!5e0!3m2!1sen!2sus!4v1634936797402!5m2!1sen!2sus"
@@ -205,7 +197,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2024 Group of Hotels | All Rights Reserved</p>
