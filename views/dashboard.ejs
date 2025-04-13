@@ -16,11 +16,11 @@
 
 <script>
   flatpickr("#checkin", {
-    dateFormat: "Y-m-d"
+    dateFormat: "d-m-Y"
   });
 
   flatpickr("#checkout", {
-    dateFormat: "Y-m-d"
+    dateFormat: "d-m-Y"
   });
 </script>
 
@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/flights" class="nav-link">
                         <i class="fas fa-plane"></i>
                         Flights
                     </a>
@@ -84,11 +84,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-car"></i>
-                        Car rentals
+                    <a href="/my-bookings" class="nav-link">
+                      <i class="fas fa-calendar-check"></i>
+                      My Bookings
                     </a>
-                </li>
+                  </li>
+                  
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-monument"></i>
@@ -108,7 +109,7 @@
     <!-- Search Section -->
 <section class="search-section">
     <div class="container">
-      <form action="/book" method="POST">
+      <form action="/search" method="POST">
         <div class="search-container">
           <div class="search-box">
             <!-- Destination -->

@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #fffff0; /* Ivory background as requested */
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .booking-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .booking-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .booking-header h1 {
+    color: #013220; /* Dark Green as requested */
+    margin-bottom: 10px;
+  }
+  
+  .hotel-info {
+    margin-bottom: 25px;
+  }
+  
+  .hotel-info h2 {
+    font-size: 24px;
+    color: #013220;
+  }
+  
+  .location {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  .dates-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  .date-box {
+    flex: 1;
+    padding: 15px;
+    background-color: #f9f9f0;
+    border-radius: 8px;
+    margin: 0 10px;
+    text-align: center;
+  }
+  
+  .date-box:first-child {
+    margin-left: 0;
+  }
+  
+  .date-box:last-child {
+    margin-right: 0;
+  }
+  
+  .date-box h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #013220;
+  }
+  
+  .date {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .guest-info {
+    margin-bottom: 25px;
+    padding: 20px;
+    background-color: #f9f9f0;
+    border-radius: 8px;
+  }
+  
+  .guest-info h3 {
+    color: #013220;
+    margin-bottom: 15px;
+  }
+  
+  .guest-info p {
+    margin-bottom: 8px;
+  }
+  
+  .booking-summary {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f0;
+    border-radius: 8px;
+  }
+  
+  .booking-summary h3 {
+    color: #013220;
+    margin-bottom: 15px;
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .summary-row.total {
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 10px;
+    border-top: 2px solid #ddd;
+    border-bottom: none;
+    padding-top: 15px;
+  }
+  
+  .confirmation-message {
+    margin: 25px 0;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .email-notice {
+    margin-top: 10px;
+    color: #013220;
+    font-weight: 500;
+  }
+  
+  .confirm-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #013220; /* Dark Green as requested */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .confirm-button:hover {
+    background-color: #024d32;
+  }
+  
+  @media (max-width: 768px) {
+    .booking-container {
+      margin: 20px;
+      padding: 20px;
+    }
+  
+    .dates-container {
+      flex-direction: column;
+    }
+  
+    .date-box {
+      margin: 10px 0;
+    }
+  }
+  

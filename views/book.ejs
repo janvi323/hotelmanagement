@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirm Your Booking</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="/stylesheets/book.css" />
+
+  <!-- Hidden data for JS -->
+  <input type="hidden" id="checkinDateVal" value="<%= checkinDate %>">
+  <input type="hidden" id="checkoutDateVal" value="<%= checkoutDate %>">
+  <input type="hidden" id="pricePerNightVal" value="<%= pricePerNight %>">
+</head>
+<body>
+  <div class="booking-container">
+    <div class="booking-header">
+      <h1>Booking Confirmation</h1>
+      <p>Please review your booking details before confirming</p>
+    </div>
+    
+    <div class="booking-details">
+      <div class="hotel-info">
+        <h2><%= hotelName %></h2>
+        <p class="location"><%= city %></p>
+      </div>
+
+      <div class="dates-container">
+        <div class="date-box">
+          <h3>Check-in</h3>
+          <p class="date"><%= checkinDate %></p>
+        </div>
+        <div class="date-box">
+          <h3>Check-out</h3>
+          <p class="date"><%= checkoutDate %></p>
+        </div>
+      </div>
+
+      <div class="guest-info">
+        <h3>Guest Information</h3>
+        <p><strong>Name:</strong> <%= guestName %></p>
+        <p><strong>Email:</strong> <%= guestEmail %></p>
+        <p><strong>Phone:</strong> <%= guestPhone %></p>
+        <p><strong>Number of Guests:</strong> <%= numberOfGuests %></p>
+      </div>
+
+      <div class="booking-summary">
+        <h3>Booking Summary</h3>
+        <div class="summary-row">
+          <span>Number of Nights:</span>
+          <span id="nights">-</span>
+        </div>
+        <div class="summary-row">
+          <span>Price per Night:</span>
+          <span>₹<%= pricePerNight.toLocaleString('en-IN') %></span>
+        </div>
+        <div class="summary-row">
+          <span>Flight Booking:</span>
+          <span><%= includeFlight === 'yes' ? 'Included' : 'Not Included' %></span>
+        </div>
+        <div class="summary-row total">
+          <span>Estimated Total:</span>
+          <span>₹<span id="totalPrice">-</span></span>
+        </div>
+      </div>
+
+      <form action="/book/confirm" method="POST">
+        <input type="hidden" name="hotelName" value="<%= hotelName %>">
+        <input type="hidden" name="city" value="<%= city %>">
+        <input type="hidden" name="checkinDate" value="<%= checkinDate %>">
+        <input type="hidden" name="checkoutDate" value="<%= checkoutDate %>">
+        <input type="hidden" name="guestName" value="<%= guestName %>">
+        <input type="hidden" name="guestEmail" value="<%= guestEmail %>">
+        <input type="hidden" name="guestPhone" value="<%= guestPhone %>">
+        <input type="hidden" name="numberOfGuests" value="<%= numberOfGuests %>">
+        <input type="hidden" name="includeFlight" value="<%= includeFlight %>">
+        <input type="hidden" id="nightsInput" name="nights" value="">
+        <input type="hidden" id="totalPriceInput" name="totalPrice" value="">
+
+        <div class="confirmation-message">
+          <p>By clicking "Confirm Booking", you agree to our terms and conditions.</p>
+          <% if (guestEmail) { %>
+            <p class="email-notice">A confirmation email will be sent to: <%= guestEmail %></p>
+          <% } %>
+        </div>
+
+        <button type="submit" class="confirm-button">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Load JS for calculation -->
+  <script src="/js/book.js"></script>
+</body>
+</html>

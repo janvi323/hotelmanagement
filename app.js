@@ -34,6 +34,7 @@ app.use((req, res, next) => {
 // Routes
 app.use("/", require("./routes/pages"));
 app.use("/", require("./routes/bookingHandler"));
+app.use("/", require("./routes/availability"));
 
 // Global error handling middleware
 app.use((err, req, res, next) => {

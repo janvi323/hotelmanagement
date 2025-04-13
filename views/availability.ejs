@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Availability</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/availability.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">TravelEase</div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/jaipur">Jaipur</a></li>
+          <li><a href="/goa">Goa</a></li>
+          <li><a href="/shillong">Shillong</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Available Hotels in <%= location.charAt(0).toUpperCase() + location.slice(1) %></h1>
+
+    <div class="hotel-grid">
+      <% hotels.forEach(hotel => { %>
+        <div class="hotel-card">
+          <img src="<%= hotel.image %>" alt="<%= hotel.name %>" class="hotel-image">
+          <div class="hotel-details">
+            <h2 class="hotel-name"><%= hotel.name %></h2>
+            <div class="hotel-rating">
+              <% for (let i = 1; i <= 5; i++) { %>
+                <% if (i <= Math.floor(hotel.rating)) { %>
+                  <i class="fas fa-star"></i>
+                <% } else if (i - hotel.rating === 0.5) { %>
+                  <i class="fas fa-star-half-alt"></i>
+                <% } else { %>
+                  <i class="far fa-star"></i>
+                <% } %>
+              <% } %>
+            </div>
+            <p class="hotel-price"><%= hotel.price %></p>
+
+            <form action="/book" method="GET">
+              <input type="hidden" name="hotelName" value="<%= hotel.name %>">
+              <input type="hidden" name="city" value="<%= location %>">
+              <input type="hidden" name="checkinDate" value="<%= checkin %>">
+              <input type="hidden" name="checkoutDate" value="<%= checkout %>">
+              <input type="hidden" name="guestName" value="<%= user ? user.firstName + ' ' + user.lastName : '' %>">
+              <input type="hidden" name="guestEmail" value="<%= user ? user.email : '' %>">
+              <input type="hidden" name="guestPhone" value="1234567890">
+              <input type="hidden" name="numberOfGuests" value="<%= guests %>">
+              <input type="hidden" name="includeFlight" value="<%= showFlights ? 'yes' : 'no' %>">
+              <button type="submit" class="book-btn">Book Now</button>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <% if (showFlights && flights && flights.length > 0) { %>
+      <div class="flights-section">
+        <h2 class="flights-title">Available Flights to <%= location.charAt(0).toUpperCase() + location.slice(1) %></h2>
+        <ul class="airline-list">
+          <% flights.forEach(flight => { %>
+            <li><%= flight %></li>
+          <% }) %>
+        </ul>
+      </div>
+    <% } %>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-section">
+        <h3 class="footer-title">EliteEscapes</h3>
+        <p>Find the best hotels and flights for your next adventure.</p>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-title">Popular Destinations</h3>
+        <ul class="footer-links">
+          <li><a href="/jaipur">Jaipur</a></li>
+          <li><a href="/goa">Goa</a></li>
+          <li><a href="/shillong">Shillong</a></li>
+          <li><a href="/delhi">Delhi</a></li>
+          <li><a href="/mumbai">Mumbai</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3 class="footer-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="copyright">
+        &copy; 2025 TravelEase. All rights reserved.
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

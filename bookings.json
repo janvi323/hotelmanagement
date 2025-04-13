@@ -1,12 +1,16 @@
 [
   {
-    "id": "1744455953659",
-    "user": "Janvi Ranout",
-    "destination": "jaipur",
-    "guests": "3 adults · 1 child · 1 room",
-    "checkin": "",
-    "checkout": "",
-    "flights": true,
-    "bookedAt": "2025-04-12T11:05:53.659Z"
+    "id": "1744524595447",
+    "userEmail": "janviranout@gmail.com",
+    "guestName": "Janvi Ranout",
+    "hotel": "Rambagh Palace",
+    "city": "jaipur",
+    "checkinDate": "2025-04-15",
+    "checkoutDate": "2025-05-14",
+    "nights": "29",
+    "numberOfGuests": "3 adults · 1 child · 1 room",
+    "includeFlight": true,
+    "amount": "290000",
+    "bookedAt": "2025-04-13T06:09:55.447Z"
   }
 ]

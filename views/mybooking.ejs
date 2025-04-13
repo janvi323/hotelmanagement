@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/stylesheets/mybooking.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="back-button">
+        <a href="/dashboard"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+      </div>
+      <h1>My Bookings</h1>
+      <p class="welcome-text">Welcome back, <%= user.firstName %>!</p>
+    </header>
+
+    <main class="bookings-container">
+      <% if (!bookings || bookings.length === 0) { %>
+        <div class="no-bookings">
+          <i class="fas fa-calendar-xmark"></i>
+          <p>No bookings yet</p>
+          <a href="/hotels" class="browse-button">Browse Hotels</a>
+        </div>
+      <% } else { %>
+        <div class="bookings-list">
+          <% bookings.forEach(booking => { %>
+            <div class="booking-card">
+              <div class="booking-header">
+                <h2><%= booking.hotel %></h2>
+                <div class="booking-date">
+                  <i class="fas fa-calendar-check"></i>
+                  Booked on: <%= new Date(booking.bookedAt).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) %>
+                </div>
+              </div>
+              
+              <div class="booking-details">
+                <div class="detail-item">
+                  <i class="fas fa-location-dot"></i>
+                  <span><%= booking.city %></span>
+                </div>
+                
+                <div class="detail-item">
+                  <i class="fas fa-calendar-days"></i>
+                  <span>
+                    <%= new Date(booking.checkinDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short' }) %> - 
+                    <%= new Date(booking.checkoutDate).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) %>
+                    <span class="nights-count">(<%= booking.nights %> nights)</span>
+                  </span>
+                </div>
+                
+                <div class="detail-item">
+                  <i class="fas fa-user-group"></i>
+                  <span><%= booking.numberOfGuests %></span>
+                </div>
+                
+                <div class="detail-item">
+                  <i class="fas fa-plane <%= booking.includeFlight ? 'flight-included' : 'flight-not-included' %>"></i>
+                  <span>Flight included: <strong><%= booking.includeFlight ? 'Yes' : 'No' %></strong></span>
+                </div>
+              </div>
+              
+              <div class="booking-price">
+                <span class="price-label">Total Amount:</span>
+                <span class="price-value">₹<%= booking.amount.toLocaleString('en-IN') %></span>
+              </div>
+              
+              <div class="booking-actions">
+                <button class="action-button view-details">View Details</button>
+                <button class="action-button download-invoice">Download Invoice</button>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      <% } %>
+    </main>
+  </div>
+
+  <script>
+    // Format dates for better display
+    document.addEventListener('DOMContentLoaded', function() {
+      // Any additional client-side JavaScript can go here
+    });
+  </script>
+</body>
+</html>
