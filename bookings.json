@@ -26,33 +26,5 @@
     "includeFlight": false,
     "amount": "47500",
     "bookedAt": "2025-04-13T06:28:42.376Z"
-  },
-  {
-    "id": "1744538731264",
-    "userEmail": "janviranout@gmail.com",
-    "guestName": "Janvi Ranout",
-    "hotel": "The Oberoi Rajvilas",
-    "city": "jaipur",
-    "checkinDate": "2025-04-12",
-    "checkoutDate": "2025-04-14",
-    "nights": "2",
-    "numberOfGuests": "2.0.1",
-    "includeFlight": true,
-    "amount": "48000",
-    "bookedAt": "2025-04-13T10:05:31.265Z"
-  },
-  {
-    "id": "1744540584759",
-    "userEmail": "janviranout@gmail.com",
-    "guestName": "Janvi Ranout",
-    "hotel": "The Oberoi Rajvilas",
-    "city": "jaipur",
-    "checkinDate": "2025-04-12",
-    "checkoutDate": "2025-04-14",
-    "nights": "2",
-    "numberOfGuests": "2.0.1",
-    "includeFlight": true,
-    "amount": "48000",
-    "bookedAt": "2025-04-13T10:36:24.759Z"
   }
 ]

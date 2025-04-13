@@ -36,19 +36,6 @@ app.use("/", require("./routes/pages"));
 app.use("/", require("./routes/bookingHandler"));
 app.use("/", require("./routes/availability"));
 
-app.get('/about', (req, res) => {
-  res.render('about'); // views/about.ejs
-});
-
-app.get('/faq', (req, res) => {
-  res.render('faq'); // views/faq.ejs
-});
-
-app.get('/contact', (req, res) => {
-  res.render('contact'); // views/contact.ejs
-});
-
-
 // Global error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
