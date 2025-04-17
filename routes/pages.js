@@ -91,6 +91,7 @@ router.post("/register", (req, res) => {
 
 // Dashboard route
 router.get("/dashboard", (req, res) => {
+  
   console.log("📂 Public dashboard accessed.");
   res.render("dashboard",{ user: req.session.user}); // No session check, public access
 });

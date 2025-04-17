@@ -1,84 +1,9 @@
 const express = require("express");
 const router = express.Router();
-
+const data = require("../locations.json"); 
 // Sample data for hotels and flights per location
-const data = {
-  jaipur: {
-    hotels: [
-      {
-        name: "The Oberoi Rajvilas",
-        price: "₹25,000 per night",
-        rating: 5,
-        image: "/images/oberoi.jpg"
-      },
-      {
-        name: "Rambagh Palace",
-        price: "₹32,000 per night",
-        rating: 5,
-        image: "/images/rambagh.jpg"
-      },
-      {
-        name: "Taj Jai Mahal Palace",
-        price: "₹18,500 per night",
-        rating: 4.5,
-        image: "/images/tajmahal.jpg"
-      }
-    ],
-    flights: [
-      "IndiGo – ₹3,500", "Air India – ₹5,200", "SpiceJet – ₹2,800"
-    ]
-  },
-  goa: {
-    hotels: [
-      {
-        name: "Taj Fort Aguada Resort",
-        price: "₹18,000 per night",
-        rating: 4.7,
-        image: "/images/tajfort.jpg"
-      },
-      {
-        name: "W Goa",
-        price: "₹22,500 per night",
-        rating: 5,
-        image: "/images/wgoa.webp"
-      },
-      {
-        name: "Alila Diwa Goa",
-        price: "₹15,800 per night",
-        rating: 4.5,
-        image: "/images/alia.jpg"
-      }
-    ],
-    flights: [
-      "IndiGo – ₹4,200", "Air India – ₹5,800", "Vistara – ₹6,500"
-    ]
-  },
-  shillong: {
-    hotels: [
-      {
-        name: "Ri Kynjai Resort",
-        price: "₹12,500 per night",
-        rating: 4.5,
-        image: "/images/rikynjai.jpg"
-      },
-      {
-        name: "Polo Towers",
-        price: "₹8,800 per night",
-        rating: 4,
-        image: "/images/polo.avif"
-      },
-      {
-        name: "Royal Heritage Tripura Castle",
-        price: "₹9,500 per night",
-        rating: 4,
-        image: "/images/tripura.jpg"
-      }
-    ],
-    flights: [
-      "IndiGo – ₹5,800", "Alliance Air – ₹6,200"
-    ]
-  }
-};
+
+ 
 
 // POST: /search → redirect to destination
 router.post("/search", (req, res) => {
