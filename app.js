@@ -4,7 +4,9 @@ const session = require("express-session");
 const app = express();
 const PORT =  3000;
 const http = require('http');
-const server = http.createServer(app); // Use http.createServer(app) for custom server
+const server = http.createServer(app);
+const mongoose = require("mongoose");
+const pagesRouter = require("./routes/pages"); // Your routes file // Use http.createServer(app) for custom server
 
 // View engine setup
 app.set("view engine", "ejs");
@@ -12,6 +14,13 @@ app.set("views", path.join(__dirname, "views"));
 
 // Middleware
 require("./middleware/common")(app);
+
+mongoose.connect("mongodb://localhost:27017/eliteescapes", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log("Connected to MongoDB"))
+.catch((error) => console.error("Error connecting to MongoDB:", error));
 
 // Session management
 app.use(session({
@@ -35,6 +44,7 @@ app.use((req, res, next) => {
 app.use("/", require("./routes/pages"));
 app.use("/", require("./routes/bookingHandler"));
 app.use("/", require("./routes/availability"));
+app.use("/", pagesRouter);
 app.get('/about', (req, res) => {
   res.render('about');
 });
