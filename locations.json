@@ -1,0 +1,183 @@
+{
+    "jaipur": {
+      "hotels": [
+        {
+          "name": "The Oberoi Rajvilas",
+          "price": "₹25,000 per night",
+          "rating": 5,
+          "image": "/images/oberoi.jpg"
+        },
+        {
+          "name": "Rambagh Palace",
+          "price": "₹32,000 per night",
+          "rating": 5,
+          "image": "/images/rambagh.jpg"
+        },
+        {
+          "name": "Taj Jai Mahal Palace",
+          "price": "₹18,500 per night",
+          "rating": 4.5,
+          "image": "/images/tajmahal.jpg"
+        }
+      ],
+      "flights": ["IndiGo – ₹3,500", "Air India – ₹5,200", "SpiceJet – ₹2,800"]
+    },
+    "goa": {
+      "hotels": [
+        {
+          "name": "Taj Fort Aguada Resort",
+          "price": "₹18,000 per night",
+          "rating": 4.7,
+          "image": "/images/tajfort.jpg"
+        },
+        {
+          "name": "W Goa",
+          "price": "₹22,500 per night",
+          "rating": 5,
+          "image": "/images/wgoa.webp"
+        },
+        {
+          "name": "Alila Diwa Goa",
+          "price": "₹15,800 per night",
+          "rating": 4.5,
+          "image": "/images/alia.jpg"
+        }
+      ],
+      "flights": ["IndiGo – ₹4,200", "Air India – ₹5,800", "Vistara – ₹6,500"]
+    },
+    "shillong": {
+      "hotels": [
+        {
+          "name": "Ri Kynjai Resort",
+          "price": "₹12,500 per night",
+          "rating": 4.5,
+          "image": "/images/rikynjai.jpg"
+        },
+        {
+          "name": "Polo Towers",
+          "price": "₹8,800 per night",
+          "rating": 4,
+          "image": "/images/polo.avif"
+        },
+        {
+          "name": "Royal Heritage Tripura Castle",
+          "price": "₹9,500 per night",
+          "rating": 4,
+          "image": "/images/tripura.jpg"
+        }
+      ],
+      "flights": ["IndiGo – ₹5,800", "Alliance Air – ₹6,200"]
+    },
+    "dehradun": {
+  "hotels": [
+    {
+      "name": "Hotel Madhuban",
+      "price": "₹6,000 per night",
+      "rating": 4.2,
+      "image": "/images/madhuban.jpg"
+    },
+    {
+      "name": "Four Points by Sheraton",
+      "price": "₹7,500 per night",
+      "rating": 4.5,
+      "image": "/images/sheraton.jpg"
+    },
+    {
+      "name": "Lemon Tree Hotel",
+      "price": "₹5,200 per night",
+      "rating": 4,
+      "image": "/images/lemontree.jpg"
+    }
+  ],
+  "flights": [
+    "IndiGo – ₹3,900",
+    "Vistara – ₹4,800",
+    "Air India – ₹5,200"
+  ]
+},
+"ooty": {
+  "hotels": [
+    {
+      "name": "Savoy - IHCL SeleQtions",
+      "price": "₹9,800 per night",
+      "rating": 4.6,
+      "image": "/images/savoy.jpg"
+    },
+    {
+      "name": "Fortune Resort Sullivan Court",
+      "price": "₹7,500 per night",
+      "rating": 4.3,
+      "image": "/images/fortune.jpg"
+    },
+    {
+      "name": "Gem Park Ooty",
+      "price": "₹6,200 per night",
+      "rating": 4.1,
+      "image": "/images/gempark.jpg"
+    }
+  ],
+  "flights": [
+    "IndiGo – ₹5,400",
+    "SpiceJet – ₹4,900",
+    "AirAsia – ₹5,700"
+  ]
+},
+"coorg": {
+  "hotels": [
+    {
+      "name": "Evolve Back Coorg",
+      "price": "₹17,000 per night",
+      "rating": 4.8,
+      "image": "/images/evolveback.jpg"
+    },
+    {
+      "name": "Taj Madikeri Resort & Spa",
+      "price": "₹21,000 per night",
+      "rating": 4.7,
+      "image": "/images/tajmadikeri.jpg"
+    },
+    {
+      "name": "Heritage Resort Coorg",
+      "price": "₹9,500 per night",
+      "rating": 4.3,
+      "image": "/images/heritagecoorg.jpg"
+    }
+  ],
+  "flights": [
+    "IndiGo – ₹4,800",
+    "Air India – ₹5,200",
+    "SpiceJet – ₹4,500"
+  ]
+},
+"mumbai": {
+  "hotels": [
+    {
+      "name": "The Taj Mahal Palace",
+      "price": "₹28,000 per night",
+      "rating": 5,
+      "image": "https://cdn.pixabay.com/photo/2017/12/23/22/10/taj-mahal-3035041_960_720.jpg"
+    },
+    {
+      "name": "Trident Nariman Point",
+      "price": "₹15,500 per night",
+      "rating": 4.7,
+      "image": "https://cdn.pixabay.com/photo/2019/10/05/10/25/mumbai-4524024_960_720.jpg"
+    },
+    {
+      "name": "Hotel Sea Princess",
+      "price": "₹9,800 per night",
+      "rating": 4.2,
+      "image": "https://cdn.pixabay.com/photo/2017/03/02/02/36/mumbai-2119322_960_720.jpg"
+    }
+  ],
+  "flights": [
+    "IndiGo – ₹2,300",
+    "Air India – ₹3,100",
+    "Vistara – ₹3,500"
+  ]
+}
+
+
+
+  }
+  

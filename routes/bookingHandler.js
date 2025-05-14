@@ -13,6 +13,11 @@ function formatDateToISO(d) {
 
 // ✅ GET /book - Render booking confirmation page
 router.get("/book", (req, res) => {
+  if (!req.session.user) {
+    req.session.errorMessage = "Please login first to book!";
+    return res.redirect("/login");
+  }
+  
   console.log("✅ Book Now route hit:", req.query);
 
   const {

@@ -14,5 +14,21 @@
     "email": "mukeshranout@gmail.com",
     "password": "Mukesh@123",
     "createdAt": "2025-04-13T06:27:03.101Z"
+  },
+  {
+    "id": "1744691657202",
+    "firstName": "Jiya ",
+    "lastName": "Kukreja",
+    "email": "jiyakukreja@gmail.com",
+    "password": "Jiya@123",
+    "createdAt": "2025-04-15T04:34:17.202Z"
+  },
+  {
+    "id": "1744790045889",
+    "firstName": "Hardik",
+    "lastName": "Jain",
+    "email": "hardik1837.be23@chitkara.edu.in",
+    "password": "Hardik@",
+    "createdAt": "2025-04-16T07:54:05.889Z"
   }
 ]
